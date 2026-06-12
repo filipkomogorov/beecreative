@@ -1,0 +1,260 @@
+.contact-section {
+  padding-top: clamp(48px, 6vw, 80px);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  align-items: start;
+  gap: clamp(36px, 6vw, 110px);
+}
+
+.field {
+  margin-bottom: 22px;
+}
+
+.field > label,
+.field-legend {
+  display: block;
+  margin-bottom: 9px;
+
+  color: var(--propolis-soft);
+
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field select,
+.field textarea {
+  width: 100%;
+
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+
+  background: #fff;
+  color: var(--propolis);
+
+  font: inherit;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible {
+  border-color: var(--uv);
+  outline: none;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(106, 76, 255, 0.18);
+}
+
+.field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.budget-fieldset {
+  margin-bottom: 22px;
+  border: 0;
+  padding: 0;
+}
+
+.chip-set {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip-set label {
+  position: relative;
+  cursor: pointer;
+}
+
+.chip-set input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  opacity: 0;
+}
+
+.chip-set span {
+  display: inline-block;
+
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.55em 1.15em;
+
+  color: var(--propolis-soft);
+
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.chip-set input:checked + span {
+  border-color: var(--propolis);
+  background: var(--propolis);
+  color: var(--nectar);
+}
+
+.chip-set input:focus-visible + span {
+  outline: 3px solid var(--uv);
+  outline-offset: 2px;
+}
+
+.hp {
+  position: absolute;
+  left: -9999px;
+
+  height: 0;
+
+  opacity: 0;
+  overflow: hidden;
+}
+
+.contact-submit {
+  padding: 1.05em 1.9em;
+  font-size: 1rem;
+}
+
+.form-status {
+  max-width: 46ch;
+  margin-top: 14px;
+
+  color: var(--uv-deep);
+
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.direct-block {
+  border-top: 1px solid var(--line);
+  padding-block: 24px;
+}
+
+.direct-block .label {
+  display: block;
+  margin-bottom: 10px;
+
+  color: var(--propolis-soft);
+
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.direct-block a.big {
+  font-family: var(--font-display);
+  font-size: clamp(1.02rem, 1.6vw, 1.3rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  word-break: break-word;
+
+  transition: color 0.2s ease;
+}
+
+.direct-block a.big:hover {
+  color: var(--uv);
+}
+
+.direct-block p {
+  color: var(--propolis-soft);
+  font-size: 0.96rem;
+}
+
+.contact-hours {
+  margin-top: 6px;
+}
+
+.contact-faq-section {
+  padding-top: 0;
+}
+
+.faq-list {
+  border-top: 1px solid var(--line);
+}
+
+.faq {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  padding-block: 22px;
+
+  cursor: pointer;
+  list-style: none;
+
+  font-family: var(--font-display);
+  font-size: clamp(0.98rem, 1.5vw, 1.2rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary:hover {
+  color: var(--uv-deep);
+}
+
+.faq .plus {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  flex: none;
+  place-items: center;
+
+  border: 1px solid var(--line);
+  border-radius: 50%;
+
+  font-family: var(--font-mono);
+  font-size: 1rem;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.faq[open] .plus {
+  background: var(--propolis);
+  color: var(--nectar);
+
+  transform: rotate(45deg);
+}
+
+.faq .answer {
+  max-width: 64ch;
+  padding-bottom: 24px;
+
+  color: var(--propolis-soft);
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,185 @@
+.projects-list-section {
+  padding-top: clamp(48px, 6vw, 80px);
+}
+
+.project-filters button {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.55em 1.2em;
+
+  background: none;
+  color: var(--propolis-soft);
+
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.05em;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.project-filters button:hover,
+.project-filters button.on {
+  border-color: var(--propolis);
+  background: var(--propolis);
+  color: var(--nectar);
+}
+
+.cases {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:
+    clamp(40px, 5vw, 72px)
+    clamp(20px, 3vw, 44px);
+}
+
+.case {
+  display: block;
+  scroll-margin-top: 90px;
+}
+
+.case .cover {
+  position: relative;
+
+  display: block;
+  aspect-ratio: 3 / 2;
+
+  border-radius: 16px;
+
+  box-shadow: 0 1px 0 var(--line);
+
+  overflow: hidden;
+}
+
+.case .cover svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  transition:
+    transform
+    0.7s
+    cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.case:hover .cover svg {
+  transform: scale(1.045);
+}
+
+.case .cover .go {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: var(--wax);
+  color: var(--propolis);
+
+  font-size: 1.05rem;
+
+  opacity: 0;
+  transform: translateY(8px);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.case:hover .cover .go {
+  opacity: 1;
+  transform: translateY(0) rotate(-45deg);
+}
+
+.case .meta-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+
+  margin-top: 20px;
+}
+
+.case h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.case .year {
+  flex: none;
+
+  color: var(--propolis-soft);
+
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+}
+
+.case .summary {
+  display: block;
+  max-width: 48ch;
+  margin-top: 9px;
+
+  color: var(--propolis-soft);
+  font-size: 0.99rem;
+}
+
+.case .metric {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: 14px;
+
+  color: var(--uv-deep);
+
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+}
+
+.case .metric .hex {
+  width: 11px;
+  height: 13px;
+  flex: none;
+}
+
+.case .tags {
+  margin-top: 14px;
+}
+
+.attrib {
+  margin-top: 26px;
+
+  color: var(--propolis-soft);
+
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.07em;
+}
+
+.attrib b {
+  color: var(--propolis);
+  font-weight: 500;
+}
+
+@media (max-width: 780px) {
+  .cases {
+    grid-template-columns: 1fr;
+  }
+
+  .case .cover .go {
+    opacity: 1;
+    transform: none;
+  }
+}

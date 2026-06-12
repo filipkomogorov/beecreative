@@ -282,7 +282,7 @@ main {
   font-size: clamp(2.4rem, 7vw, 7rem);
   font-weight: 800;
   letter-spacing: -0.02em;
-  line-height: 1.04;
+  line-height: 1.1;
 }
 
 .placeholder-button {
@@ -483,7 +483,7 @@ footer {
   font-size: clamp(2.3rem, 7.6vw, 7rem);
   font-weight: 800;
   letter-spacing: -0.01em;
-  line-height: 1.04;
+  line-height: 1.1;
   text-wrap: balance;
 }
 

@@ -19,7 +19,7 @@ const ContactDetails = () => {
           className="big"
           href="tel:+359881234567"
         >
-          +359 88 123 4567
+          +359 89 893 0019
         </a>
 
         <p className="contact-hours">
@@ -31,7 +31,7 @@ const ContactDetails = () => {
         <span className="label">Кошерът</span>
 
         <p>
-          Русе, България — работим с клиенти от
+          Габрово, България — работим с клиенти от
           целия свят, дистанционно или на място.
         </p>
       </div>

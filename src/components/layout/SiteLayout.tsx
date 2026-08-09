@@ -2,7 +2,6 @@ import { Outlet } from "react-router-dom";
 
 import LanguageSync from "../../i18n/LanguageSync";
 import SvgSymbols from "../shared/SvgSymbols";
-import Footer from "./Footer";
 import Header from "./Header";
 import ScrollToTop from "./ScrollToTop";
 
@@ -23,7 +22,6 @@ const SiteLayout = () => {
         <Outlet />
       </main>
 
-      <Footer />
     </>
   );
 };

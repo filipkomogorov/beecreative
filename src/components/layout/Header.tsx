@@ -14,7 +14,6 @@ const Header = () => {
 
   const { t, i18n } = useTranslation();
 
-
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -77,7 +76,11 @@ const Header = () => {
 
   return (
     <header className={navClassName}>
-      <Link className="brand" to="/" aria-label="BeeCreative — начало">
+      <Link
+      
+      className="brand"
+      to={getRoute("home", language)}
+      aria-label="BeeCreative — начало">
         <HexIcon className="mark" color="var(--honey)" solid />
 
         <span>
@@ -90,13 +93,6 @@ const Header = () => {
         id="navLinks"
         aria-label="Основна навигация"
       >
-        <button
-          type="button"
-          className="language-switcher"
-          onClick={() => switchLanguage(language === "bg" ? "en" : "bg")}
-        >
-          {language === "bg" ? "EN" : "BG"}
-        </button>
         <NavLink
           to={getRoute("services", language)}
           className={getNavLinkClass}
@@ -120,6 +116,13 @@ const Header = () => {
             →
           </span>
         </NavLink>
+        <button
+          type="button"
+          className="language-switcher"
+          onClick={() => switchLanguage(language === "bg" ? "en" : "bg")}
+        >
+          {language === "bg" ? "EN" : "BG"}
+        </button>
       </nav>
 
       <button

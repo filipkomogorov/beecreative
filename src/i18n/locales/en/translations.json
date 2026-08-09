@@ -1,0 +1,14 @@
+{
+  "nav": {
+    "services": "Services",
+    "process": "Process",
+    "projects": "Projects",
+    "startProject": "Start a project",
+    "mainNavigation": "Main navigation",
+    "openMenu": "Open main navigation",
+    "closeMenu": "Close main navigation",
+    "menu": "MENU",
+    "close": "CLOSE",
+    "homeLabel": "BeeCreative — home"
+  }
+}

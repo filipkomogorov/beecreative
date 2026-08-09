@@ -1,0 +1,14 @@
+{
+  "nav": {
+    "services": "Услуги",
+    "process": "Процес",
+    "projects": "Проекти",
+    "startProject": "Започни проект",
+    "mainNavigation": "Основна навигация",
+    "openMenu": "Отвори основната навигация",
+    "closeMenu": "Затвори основната навигация",
+    "menu": "МЕНЮ",
+    "close": "ЗАТВОРИ",
+    "homeLabel": "BeeCreative — начало"
+  }
+}

@@ -1,42 +1,43 @@
+import { useTranslation } from "react-i18next";
+
 import HexIcon from "../../components/shared/HexIcon";
 import SectionHeading from "../../components/shared/SectionHeading";
 import { processPrinciples } from "../../data/process";
 
 const ProcessPrinciples = () => {
+  const { t } = useTranslation();
+
   return (
     <section
       className="section"
-      aria-label="Как работим с вас"
+      aria-label={t("processPage.principles.ariaLabel") as string}
     >
       <div className="wrap">
         <SectionHeading
-          eyebrow="Правила на кошера"
+          eyebrow={t("processPage.principles.eyebrow")}
           title={
             <>
-              Три правила,{" "}
-              <em>нула изненади</em>
+              {t("processPage.principles.title")}{" "}
+              <em>{t("processPage.principles.titleColor")}</em>
             </>
           }
-          description="Процесът е половината работа. Другата половина е как се чувствате по време на него."
+          description={t("processPage.principles.description")}
         />
 
         <div className="principles">
-          {processPrinciples.map((principle) => (
-            <article
-              className="principle"
-              data-reveal
-              key={principle.title}
-            >
-              <HexIcon
-                className="hex"
-                color={principle.iconColor}
-              />
+          {processPrinciples.map((principle) => {
+            const baseKey = `processPage.principles.items.${principle.translationKey}`;
 
-              <h3>{principle.title}</h3>
+            return (
+              <article className="principle" data-reveal key={principle.id}>
+                <HexIcon className="hex" color={principle.iconColor} />
 
-              <p>{principle.description}</p>
-            </article>
-          ))}
+                <h3>{t(`${baseKey}.title`)}</h3>
+
+                <p>{t(`${baseKey}.description`)}</p>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

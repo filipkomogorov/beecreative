@@ -1,7 +1,11 @@
+import { useTranslation } from "react-i18next";
+
 import SectionHeading from "../../components/shared/SectionHeading";
 import { homeProcessSteps } from "../../data/processSteps";
 
 const HomeProcess = () => {
+  const { t } = useTranslation();
+
   return (
     <section
       className="section dark process"
@@ -14,34 +18,45 @@ const HomeProcess = () => {
 
       <div className="wrap">
         <SectionHeading
-          eyebrow="Вътре в кошера"
+          eyebrow={t("home.process.eyebrow")}
           title={
             <>
-              От нектар <em>до мед</em>
+              {t("home.process.title")}{" "}
+              <em> {t("home.process.titleColor")}</em>
             </>
           }
-          description="Пчелата казва на кошера къде са цветята, като танцува. Ние правим почти същото — с прототипи."
+          description={t("home.process.description")}
         />
 
         <ol className="steps">
-          {homeProcessSteps.map((step) => (
-            <li
-              className="step"
-              data-reveal
-              key={step.number}
-            >
-              <span className="num">
-                {step.number} — {step.label}
-              </span>
+          {homeProcessSteps.map((step) => {
+            const baseKey =
+              `home.process.steps.${step.translationKey}`;
 
-              <h3>
-                {step.title}{" "}
-                <span>{step.subtitle}</span>
-              </h3>
+            return (
+              <li
+                className="step"
+                data-reveal
+                key={step.id}
+              >
+                <span className="num">
+                  {step.number} —{" "}
+                  {t(`${baseKey}.label`)}
+                </span>
 
-              <p>{step.description}</p>
-            </li>
-          ))}
+                <h3>
+                  {t(`${baseKey}.title`)}{" "}<br></br>
+                  <span>
+                    {t(`${baseKey}.subtitle`)}
+                  </span>
+                </h3>
+
+                <p>
+                  {t(`${baseKey}.description`)}
+                </p>
+              </li>
+            );
+          })}
         </ol>
       </div>
     </section>

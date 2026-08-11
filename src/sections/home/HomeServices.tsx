@@ -1,45 +1,68 @@
+import { useTranslation } from "react-i18next";
+
 import HexIcon from "../../components/shared/HexIcon";
 import SectionHeading from "../../components/shared/SectionHeading";
 import { homeServices } from "../../data/services";
 
 const HomeServices = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="section" id="services">
       <div className="wrap">
         <SectionHeading
-          eyebrow="Какво правим"
+          eyebrow={t("home.services")}
           title={
             <>
-              Създадено за скорост,{" "}
-              <em>направено да трае</em>
+              {t("home.servicesTitle")}{" "}
+              <em>{t("home.servicesTitleColor")}</em>
             </>
           }
-          description="Четири дисциплини, една мания: детайлите, които забелязваш само когато липсват."
+          description={t("home.servicesSubtitle")}
         />
 
         <div className="services-grid">
-          {homeServices.map((service) => (
-            <article
-              className="service"
-              data-reveal
-              key={service.title}
-            >
-              <HexIcon
-                className="hex"
-                color={service.iconColor}
-              />
+          {homeServices.map((service) => {
+            const tags = t(
+              `home.serviceItems.${service.id}.tags`,
+              {
+                returnObjects: true,
+              }
+            ) as string[];
 
-              <h3>{service.title}</h3>
+            return (
+              <article
+                className="service"
+                data-reveal
+                key={service.id}
+              >
+                <HexIcon
+                  className="hex"
+                  color={service.iconColor}
+                />
 
-              <p>{service.description}</p>
+                <h3>
+                  {t(
+                    `home.serviceItems.${service.id}.title`
+                  )}
+                </h3>
 
-              <ul className="tags">
-                {service.tags.map((tag) => (
-                  <li key={tag}>{tag}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
+                <p>
+                  {t(
+                    `home.serviceItems.${service.id}.description`
+                  )}
+                </p>
+
+                <ul className="tags">
+                  {tags.map((tag) => (
+                    <li key={tag}>
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

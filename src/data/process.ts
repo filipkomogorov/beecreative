@@ -1,18 +1,12 @@
 export interface DetailedProcessStep {
   id: string;
   number: string;
-  name: string;
-  duration: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  tasks: string[];
-  result: string;
+  translationKey: string;
 }
 
 export interface ProcessPrinciple {
-  title: string;
-  description: string;
+  id: string;
+  translationKey: string;
   iconColor: string;
 }
 
@@ -20,94 +14,39 @@ export const detailedProcessSteps: DetailedProcessStep[] = [
   {
     id: "razuznavane",
     number: "01",
-    name: "Разузнаване",
-    duration: "1–2 седмици",
-    title: "Откриваме",
-    subtitle: "/ стратегия",
-    description:
-      "Преди да полетим, гледаме картата. Влизаме в бизнеса ви: кои са клиентите, какво ги спира, къде са конкурентите. Колкото по-добре разбираме полето, толкова по-точен е резултатът.",
-    tasks: [
-      "Интервюта с вас и екипа ви",
-      "Анализ на конкуренцията и пазара",
-      "Карта на съдържанието и структурата",
-      "Технически план и избор на технологии",
-    ],
-    result:
-      "стратегически документ, план по седмици и ясна оферта — без дребен шрифт.",
+    translationKey: "discovery",
   },
   {
     id: "tants",
     number: "02",
-    name: "Танц",
-    duration: "2–3 седмици",
-    title: "Проектираме",
-    subtitle: "/ прототип",
-    description:
-      "Пчелата показва посоката с танц — ние с прототип. Виждате как ще изглежда и как ще се усеща сайтът, преди да напишем и ред продукционен код. Промените тук са евтини; по-късно не са.",
-    tasks: [
-      "Мудбордове и визуални посоки",
-      "Дизайн на ключовите страници",
-      "Кликаем прототип във Figma",
-      "Тестове на анимация и интеракции",
-    ],
-    result:
-      "одобрен дизайн и прототип, който можете да пробвате на телефона си.",
+    translationKey: "dance",
   },
   {
     id: "gradezh",
     number: "03",
-    name: "Градеж",
-    duration: "3–6 седмици",
-    title: "Изграждаме",
-    subtitle: "/ клетка по клетка",
-    description:
-      "Кодът се пише по спринтове, а не в тъмна стая. Всяка седмица виждате работеща версия в staging среда — без презентации: истинският сайт, в истински браузър.",
-    tasks: [
-      "Разработка по седмични спринтове",
-      "Код ревю на всеки ред",
-      "Автоматизирани тестове и достъпност",
-      "Интеграции — CMS, плащания, аналитика",
-    ],
-    result:
-      "staging среда, която расте всяка седмица, и код, който не ни е срам да покажем.",
+    translationKey: "build",
   },
   {
     id: "zhatva",
     number: "04",
-    name: "Жътва",
-    duration: "1 седмица + нататък",
-    title: "Пускаме",
-    subtitle: "/ растеж",
-    description:
-      "Стартът не е финал, а първи ден. Качваме на продъкшън, обучаваме екипа ви и оставаме наблизо — медът се вади редовно, не еднократно.",
-    tasks: [
-      "Качване на продъкшън и финални проверки",
-      "Обучение на екипа ви за CMS-а",
-      "Настройка на аналитика и цели",
-      "План за развитие след старта",
-    ],
-    result:
-      "жив сайт, пълен достъп до всичко и 30 дни корекции за наша сметка.",
+    translationKey: "harvest",
   },
 ];
 
 export const processPrinciples: ProcessPrinciple[] = [
   {
-    title: "Виждате всичко",
-    description:
-      "Седмични демота на работещ сайт, не на слайдове. Прогресът се гледа в браузър, не се разказва.",
+    id: "visibility",
+    translationKey: "visibility",
     iconColor: "var(--honey)",
   },
   {
-    title: "Един отговорник",
-    description:
-      "Пишете на един човек, който знае всичко по проекта ви — без препращане между отдели.",
+    id: "singleContact",
+    translationKey: "singleContact",
     iconColor: "var(--uv)",
   },
   {
-    title: "Без изненади",
-    description:
-      "Ясен обхват и ясни цени. Промените се обсъждат преди да струват — не след това.",
+    id: "noSurprises",
+    translationKey: "noSurprises",
     iconColor: "var(--honey)",
   },
 ];

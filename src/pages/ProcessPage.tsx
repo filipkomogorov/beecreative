@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 import CallToAction from "../components/shared/CallToAction";
 import PageHero from "../components/shared/PageHero";
@@ -8,32 +9,54 @@ import ProcessDetail from "../sections/process/ProcessDetail";
 import ProcessPrinciples from "../sections/process/ProcessPrinciples";
 
 const ProcessPage = () => {
-  const pageRef = useRef<HTMLDivElement>(null);
+  const pageRef =
+    useRef<HTMLDivElement>(null);
+
+  const { t } = useTranslation();
 
   useRevealAnimations(pageRef);
 
   return (
     <>
       <PageMeta
-        title="Процес — BeeCreative"
-        description="Как работи BeeCreative: четири стъпки от първия разговор до работещ сайт — разузнаване, танц, градеж и жътва."
+        title={t("processPage.meta.title")}
+        description={t(
+          "processPage.meta.description"
+        )}
       />
 
       <div ref={pageRef}>
         <PageHero
-          eyebrow="Процес"
-          firstLine="От нектар"
+          eyebrow={t(
+            "processPage.hero.eyebrow"
+          )}
+          firstLine={t(
+            "processPage.hero.firstLine"
+          )}
           secondLine={
             <>
-              до <em>мед.</em>
+              {t(
+                "processPage.hero.secondLineBefore"
+              )}{" "}
+              <em>
+                {t(
+                  "processPage.hero.secondLineColor"
+                )}
+              </em>
             </>
           }
-          description="Четири стъпки от първия разговор до работещ сайт. Без магия — само занаят, повтарян достатъчно пъти, за да изглежда лесен."
-          currentPage="Процес"
+          description={t(
+            "processPage.hero.description"
+          )}
+          currentPage={t(
+            "processPage.hero.currentPage"
+          )}
         />
 
         <ProcessDetail />
+
         <ProcessPrinciples />
+
         <CallToAction />
       </div>
     </>

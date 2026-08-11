@@ -1,13 +1,29 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 
+import { useTranslation } from "react-i18next";
+import { getRoute, Language, getRouteKeyFromPath } from "../../i18n/routes";
+
+import { useNavigate } from "react-router-dom";
+
 import HexIcon from "../shared/HexIcon";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const { t, i18n } = useTranslation();
+
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const language: Language = i18n.resolvedLanguage === "en" ? "en" : "bg";
+
+  const switchLanguage = (newLanguage: Language) => {
+    const routeKey = getRouteKeyFromPath(location.pathname);
+
+    navigate(getRoute(routeKey, newLanguage));
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,38 +61,27 @@ const Header = () => {
     .filter(Boolean)
     .join(" ");
 
-  const linksClassName = [
-    "nav-links",
-    isMenuOpen ? "open" : "",
-  ]
+  const linksClassName = ["nav-links", isMenuOpen ? "open" : ""]
     .filter(Boolean)
     .join(" ");
 
-  const toggleClassName = [
-    "nav-toggle",
-    isMenuOpen ? "open" : "",
-  ]
+  const toggleClassName = ["nav-toggle", isMenuOpen ? "open" : ""]
     .filter(Boolean)
     .join(" ");
 
-  const getNavLinkClass = ({
-    isActive,
-  }: {
-    isActive: boolean;
-  }) => (isActive ? "active" : undefined);
+  const getNavLinkClass = ({ isActive }: { isActive: boolean }) =>
+    isActive ? "active" : undefined;
+
+  console.log(language);
 
   return (
     <header className={navClassName}>
       <Link
-        className="brand"
-        to="/"
-        aria-label="BeeCreative — начало"
-      >
-        <HexIcon
-          className="mark"
-          color="var(--honey)"
-          solid
-        />
+      
+      className="brand"
+      to={getRoute("home", language)}
+      aria-label="BeeCreative — начало">
+        <HexIcon className="mark" color="var(--honey)" solid />
 
         <span>
           Bee<i>Creative</i>
@@ -88,29 +93,36 @@ const Header = () => {
         id="navLinks"
         aria-label="Основна навигация"
       >
-        <NavLink to="/uslugi" className={getNavLinkClass}>
-          Услуги
+        <NavLink
+          to={getRoute("services", language)}
+          className={getNavLinkClass}
+        >
+          {t("nav.services")}
         </NavLink>
-
-        <NavLink to="/protses" className={getNavLinkClass}>
-          Процес
-        </NavLink>
-
-        <NavLink to="/proekti" className={getNavLinkClass}>
-          Проекти
+        <NavLink to={getRoute("process", language)} className={getNavLinkClass}>
+          {t("nav.process")}
         </NavLink>
 
         <NavLink
-          className={({ isActive }) =>
-            `btn${isActive ? " active" : ""}`
-          }
-          to="/kontakti"
+          to={getRoute("projects", language)}
+          className={getNavLinkClass}
         >
-          Започни проект
+          {t("nav.projects")}
+        </NavLink>
+
+        <NavLink to={getRoute("contact", language)} className="btn">
+          {t("nav.startProject")}
           <span className="arr" aria-hidden="true">
             →
           </span>
         </NavLink>
+        <button
+          type="button"
+          className="language-switcher"
+          onClick={() => switchLanguage(language === "bg" ? "en" : "bg")}
+        >
+          {language === "bg" ? "EN" : "BG"}
+        </button>
       </nav>
 
       <button

@@ -1,0 +1,213 @@
+{
+  "nav": {
+    "services": "Services",
+    "process": "Process",
+    "projects": "Projects",
+    "startProject": "Start a project",
+    "mainNavigation": "Main navigation",
+    "openMenu": "Open main navigation",
+    "closeMenu": "Close main navigation",
+    "menu": "MENU",
+    "close": "CLOSE",
+    "homeLabel": "BeeCreative — home"
+  },
+  "home": {
+    "topTitle": "WEB DEVELOPMENT AND MARKETING STUDIO",
+    "hero": "We make ",
+    "heroSecondRow": "the web ",
+    "heroColor": "buzz.",
+    "subtitle": "We build fast, easy-to-use websites for brands that refuse to blend in.",
+    "scroll": "Scroll down",
+
+    "services": "What we do",
+    "servicesTitle": "Built for speed, ",
+    "servicesTitleColor": "made to last.",
+    "servicesSubtitle": "Everything you need, all in one place: from websites and online stores to digital marketing.",
+
+    "serviceItems": {
+      "websites": {
+        "title": "Web Design & Development",
+        "description": "We design and develop websites tailored to your needs. From landing pages to corporate websites, every website we build loads instantly, looks flawless on every screen and is easy to manage.",
+        "tags": ["Next.js", "Astro", "Headless CMS"]
+      },
+
+      "commerce": {
+        "title": "E-commerce",
+        "description": "Online stores built to scale, that turn visitors into customers – fast checkout, clean catalogues and zero friction. Every theme is developed from scratch, never based on an off-the-shelf template.",
+        "tags": ["Shopify", "Stripe", "Conversion-focused design"]
+      },
+
+      "apps": {
+        "title": "Website Management",
+        "description": "Ongoing content creation, management and technical support. We keep your website updated, secure and performing at its best, so it can serve as your most powerful marketing tool for attracting new customers.",
+        "tags": ["React", "TypeScript", "Design systems"]
+      },
+
+      "animation": {
+        "title": "Digital Marketing",
+        "description": "We cover every aspect of digital marketing, creating long-term, sustainable strategies across multiple channels. Our marketing team knows how to capture attention and turn it into measurable results.",
+        "tags": ["GSAP", "WebGL", "Scroll choreography"]
+      }
+    },
+    "process": {
+      "eyebrow": "Inside the hive",
+      "title": "From nectar",
+      "titleColor": "to honey",
+      "description": "A four-step process that turns your business into a website that builds trust, generates leads and grows alongside you.",
+
+      "steps": {
+        "discovery": {
+          "label": "Discovery",
+          "title": "Positioning",
+          "subtitle": "/ strategy",
+          "description": "A clear visual position shaped by analysis of your audience, goals and competitors."
+        },
+
+        "dance": {
+          "label": "Dance",
+          "title": "Wireframes",
+          "subtitle": "/ prototype",
+          "description": "Wireframes, a conversion-focused structure and a visual direction tested and refined."
+        },
+
+        "build": {
+          "label": "Build",
+          "title": "Development",
+          "subtitle": "/ cell by cell",
+          "description": "Design and development under one roof. Nothing gets lost between teams. No detail gets overlooked."
+        },
+
+        "harvest": {
+          "label": "Harvest",
+          "title": "Launch",
+          "subtitle": "/ growth",
+          "description": "We launch, measure and improve. We stay after launch too — hives need beekeepers, and websites need care."
+        }
+      }
+    }
+  },
+  "servicesPage": {
+    "items": {
+      "websites": {
+        "navigationLabel": "Websites",
+        "title": "Websites & brand platforms",
+        "description": "Your brand's digital storefront. Marketing websites and campaign pages that load instantly, look flawless and speak in your voice.",
+        "includes": [
+          "Bespoke design and development — no templates",
+          "Headless CMS — manage your own content",
+          "Multilingual versions and localisation",
+          "Technical SEO from the first line of code",
+          "Accessibility and performance by default",
+          "Ongoing support and development after launch"
+        ],
+        "tags": ["Next.js", "Astro", "Headless CMS"]
+      }
+    }
+  },
+  "processPage": {
+    "meta": {
+      "title": "Process — BeeCreative",
+      "description": "How BeeCreative works: four steps from the first conversation to a live website — discovery, design, build and launch."
+    },
+
+    "hero": {
+      "eyebrow": "Process",
+      "firstLine": "From nectar",
+      "secondLineBefore": "to",
+      "secondLineColor": "honey.",
+      "description": "Four steps from the first conversation to a live website. No magic — just a craft repeated enough times to make it look easy.",
+      "currentPage": "Process"
+    },
+
+    "quickNavAria": "Quick navigation through process steps",
+    "tasksLabel": "What we do",
+    "resultLabel": "Result:",
+
+    "steps": {
+      "discovery": {
+        "name": "Discovery",
+        "duration": "1–2 weeks",
+        "title": "Discover",
+        "subtitle": "/ strategy",
+        "description": "Before we take off, we study the map. We get inside your business: who your customers are, what gets in their way and where your competitors stand. The better we understand the landscape, the more precise the outcome.",
+        "tasks": [
+          "Interviews with you and your team",
+          "Competitor and market analysis",
+          "Content and site structure mapping",
+          "Technical plan and technology selection"
+        ],
+        "result": "a strategic document, week-by-week plan and clear proposal — no fine print."
+      },
+
+      "dance": {
+        "name": "Dance",
+        "duration": "2–3 weeks",
+        "title": "Design",
+        "subtitle": "/ prototype",
+        "description": "A bee shows direction through dance — we use a prototype. You see how the website will look and feel before we write a line of production code. Changes are inexpensive here; later they aren't.",
+        "tasks": [
+          "Moodboards and visual directions",
+          "Design of key pages",
+          "Clickable Figma prototype",
+          "Animation and interaction testing"
+        ],
+        "result": "an approved design and prototype you can try directly on your phone."
+      },
+
+      "build": {
+        "name": "Build",
+        "duration": "3–6 weeks",
+        "title": "Build",
+        "subtitle": "/ cell by cell",
+        "description": "Code is written in sprints, not behind closed doors. Every week you see a working version in staging — no slide decks, just the real website in a real browser.",
+        "tasks": [
+          "Development in weekly sprints",
+          "Code review on every change",
+          "Automated testing and accessibility",
+          "Integrations — CMS, payments and analytics"
+        ],
+        "result": "a staging environment that grows every week, backed by code we're proud to show."
+      },
+
+      "harvest": {
+        "name": "Harvest",
+        "duration": "1 week + ongoing",
+        "title": "Launch",
+        "subtitle": "/ growth",
+        "description": "Launch isn't the finish line — it's day one. We move everything into production, train your team and stay close afterwards. Honey is harvested regularly, not just once.",
+        "tasks": [
+          "Production launch and final checks",
+          "CMS training for your team",
+          "Analytics and goal configuration",
+          "Post-launch development plan"
+        ],
+        "result": "a live website, full access to everything and 30 days of fixes on us."
+      }
+    },
+
+    "principles": {
+      "ariaLabel": "How we work with you",
+      "eyebrow": "Rules of the hive",
+      "title": "Three rules,",
+      "titleColor": "zero surprises",
+      "description": "The process is half the work. The other half is how you feel while we're doing it.",
+
+      "items": {
+        "visibility": {
+          "title": "You see everything",
+          "description": "Weekly demos of the working website, not slide decks. Progress is seen in the browser, not described in meetings."
+        },
+
+        "singleContact": {
+          "title": "One point of contact",
+          "description": "You talk to one person who knows your entire project — no bouncing between departments."
+        },
+
+        "noSurprises": {
+          "title": "No surprises",
+          "description": "Clear scope and clear pricing. Changes are discussed before they cost you — not afterwards."
+        }
+      }
+    }
+  }
+}

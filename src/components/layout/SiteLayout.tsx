@@ -1,13 +1,15 @@
 import { Outlet } from "react-router-dom";
 
+import LanguageSync from "../../i18n/LanguageSync";
 import SvgSymbols from "../shared/SvgSymbols";
-import Footer from "./Footer";
 import Header from "./Header";
 import ScrollToTop from "./ScrollToTop";
 
 const SiteLayout = () => {
   return (
     <>
+      <LanguageSync />
+
       <a className="skip-link" href="#main">
         Към съдържанието
       </a>
@@ -20,7 +22,6 @@ const SiteLayout = () => {
         <Outlet />
       </main>
 
-      <Footer />
     </>
   );
 };

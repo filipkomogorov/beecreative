@@ -12,11 +12,22 @@ const AppRouter = () => {
   return (
     <Routes>
       <Route element={<SiteLayout />}>
+        {/* Bulgarian */}
         <Route index element={<HomePage />} />
         <Route path="uslugi" element={<ServicesPage />} />
         <Route path="protses" element={<ProcessPage />} />
         <Route path="proekti" element={<ProjectsPage />} />
         <Route path="kontakti" element={<ContactPage />} />
+
+        {/* English */}
+        <Route path="en">
+          <Route index element={<HomePage />} />
+          <Route path="services" element={<ServicesPage />} />
+          <Route path="process" element={<ProcessPage />} />
+          <Route path="projects" element={<ProjectsPage />} />
+          <Route path="contact" element={<ContactPage />} />
+        </Route>
+
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
